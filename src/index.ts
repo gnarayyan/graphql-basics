@@ -1,6 +1,7 @@
 import { GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
 import { createHandler } from 'graphql-http/lib/use/express';
 import express from 'express';
+import { ruruHTML } from 'ruru/server';
  
 // Construct a schema
 const schema = new GraphQLSchema({
@@ -16,6 +17,12 @@ const schema = new GraphQLSchema({
 });
  
 const app = express();
+
+// Serve the GraphiQL IDE.
+app.get('/', (_req, res) => {
+  res.type('html');
+  res.end(ruruHTML({ endpoint: '/graphql' }));
+});
  
 // Create and use the GraphQL handler.
 app.all(
