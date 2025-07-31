@@ -1,0 +1,15 @@
+Play Pause       =>     p   or     space
+
+previous / next  =>     shift + <   or shift + >
+
+toggle subtitle  => v
+
+speed            => []    or     {}
+
+reset speed      => backspace
+
+quit             => quit
+
+fwd / bkd        =>  left / right    , jump (up/ down) 
+
+Volume up/down   => 9  0   OR    /   *
